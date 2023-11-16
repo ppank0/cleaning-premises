@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background-color: rgba(179, 206, 193, 0.659);
+    color:rgba(13, 14, 86, 0.897);
+}
+.footer_social-links ul li{
+    list-style: none;
+}
+.footer-a{
+    text-decoration: none;
+    color: rgba(13, 14, 86, 0.832);
+}
+.footer div h3{
+    margin-bottom: .5rem;
+}
