@@ -1,0 +1,46 @@
+.header-container{
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--header-text-color);
+    background-color: rgba(179, 206, 193, 0.659);
+}
+.header-container h1{
+    font-size: 2rem;
+}
+.nav-list{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-list a{
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.nav-list a:hover{
+    text-decoration:underline;
+}
+.burger-icon{
+    display: none;
+}
+@media screen and (max-width:1040px){
+    .header-container h1{
+        font-size: 1.3rem;
+    }
+    .nav-list a{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:795px){
+    .burger-icon{
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-list{
+        display: none;
+    }
+}
