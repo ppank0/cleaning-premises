@@ -10,3 +10,12 @@
     color: rgb(78, 77, 77);
     margin-bottom: 1rem;
 }
+#about-us img{
+    width: 50%;
+}
+
+@media screen and (max-width:810px){
+    #about-us img{
+        width: 70%;
+    }
+}
