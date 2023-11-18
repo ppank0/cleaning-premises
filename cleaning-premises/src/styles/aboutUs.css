@@ -1,0 +1,12 @@
+#about-us{
+    padding: 2rem 5rem;
+}
+#about-us h2{
+    font-size: 2rem;
+    color: var(--header-text-color);
+    margin-bottom: 1.5rem;
+}
+#about-us p{
+    color: rgb(78, 77, 77);
+    margin-bottom: 1rem;
+}
