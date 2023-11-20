@@ -1,5 +1,4 @@
 import Footer from './../components/Footer'
-import Header from './../components/Header'
 import AboutUs from '../components/AboutUs';
 import './../styles/home.css';
 
