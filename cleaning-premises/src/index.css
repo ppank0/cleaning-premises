@@ -21,4 +21,5 @@ code {
 
 *:root{
   --header-text-color: rgba(13, 14, 86, 0.734);
+  --bg-color: rgba(205,223,214,1)
 }
