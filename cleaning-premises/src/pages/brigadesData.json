@@ -1,68 +1,66 @@
-{
-    "brigades": [
-        {
-            "id": 1,
-            "name": "Бригада 1",
-            "members": [
-                {
-                    "id": 1,
-                    "img": "https://sun9-37.userapi.com/impg/MLYAr6DkaIOoiWqBYvtxpYhPiVzGucUsZoLKZg/_qxkT_L0Jqk.jpg?size=633x950&quality=95&sign=ad2183154ed67ab6fd7c4c657f9ac8b4&c_uniq_tag=iYnwr2AfQHpQYfqvLsX73Xx_u27C10d9gsfzjQHvZBM&type=album",
-                    "name": "Иван Иванов",
-                    "contact": "ivan@example.com",
-                    "experience": "3 года"
-                },
-                {
-                    "id": 2,
-                    "img": "https://omsk.tdsu.ru/upload/iblock/f54/qs3x9hnf8rlv477prb1kqivxtnysmj8p.jpg",
-                    "name": "Петр Петров",
-                    "contact": "petr@example.com",
-                    "experience": "5 лет"
-                }
-            ],
-            "schedule": [
-                {
-                    "date": "2023-11-18",
-                    "time": "09:00",
-                    "room": "Кабинет 101"
-                },
-                {
-                    "date": "2023-11-18",
-                    "time": "11:00",
-                    "room": "Кабинет 102"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Бригада 2",
-            "members": [
-                {
-                    "id": 3,
-                    "img": "https://abbanks.by/upload/medialibrary/e5a/6_1.jpg",
-                    "name": "Анна Сидорова",
-                    "contact": "anna@example.com",
-                    "experience": "2 года"
-                },
-                {
-                    "id": 4,
-                    "img": "https://cdn.inari.pro/watermarkcache/9a/c3/9ac33c58de9d48adb841de261b88c778.jpg",
-                    "name": "Мария Иванова",
-                    "contact": "maria@example.com",
-                    "experience": "4 года"
-                }
-            ],
-            "schedule": [
-                {
-                    "date": "2023-11-18",
-                    "time": "10:00",
-                    "room": "Кабинет 201"
-                },
-                {
-                    "date": "2023-11-18",
-                    "time": "13:00",
-                    "room": "Кабинет 202"
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "Бригада 1",
+        "members": [
+            {
+                "id": 1,
+                "img": "https://sun9-37.userapi.com/impg/MLYAr6DkaIOoiWqBYvtxpYhPiVzGucUsZoLKZg/_qxkT_L0Jqk.jpg?size=633x950&quality=95&sign=ad2183154ed67ab6fd7c4c657f9ac8b4&c_uniq_tag=iYnwr2AfQHpQYfqvLsX73Xx_u27C10d9gsfzjQHvZBM&type=album",
+                "name": "Иван Иванов",
+                "contact": "ivan@example.com",
+                "experience": "3 года"
+            },
+            {
+                "id": 2,
+                "img": "https://omsk.tdsu.ru/upload/iblock/f54/qs3x9hnf8rlv477prb1kqivxtnysmj8p.jpg",
+                "name": "Петр Петров",
+                "contact": "petr@example.com",
+                "experience": "5 лет"
+            }
+        ],
+        "schedule": [
+            {
+                "date": "2023-11-18",
+                "time": "09:00",
+                "room": "Кабинет 101"
+            },
+            {
+                "date": "2023-11-18",
+                "time": "11:00",
+                "room": "Кабинет 102"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Бригада 2",
+        "members": [
+            {
+                "id": 3,
+                "img": "https://abbanks.by/upload/medialibrary/e5a/6_1.jpg",
+                "name": "Анна Сидорова",
+                "contact": "anna@example.com",
+                "experience": "2 года"
+            },
+            {
+                "id": 4,
+                "img": "https://cdn.inari.pro/watermarkcache/9a/c3/9ac33c58de9d48adb841de261b88c778.jpg",
+                "name": "Мария Иванова",
+                "contact": "maria@example.com",
+                "experience": "4 года"
+            }
+        ],
+        "schedule": [
+            {
+                "date": "2023-11-18",
+                "time": "10:00",
+                "room": "Кабинет 201"
+            },
+            {
+                "date": "2023-11-18",
+                "time": "13:00",
+                "room": "Кабинет 202"
+            }
+        ]
+    }
+]
