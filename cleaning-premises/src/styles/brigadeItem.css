@@ -1,0 +1,27 @@
+.brigadeItem-title{
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+}
+.brigade-name{
+    font-size: 1.8rem;
+    padding-left: 2rem;
+    color: var(--header-text-color);
+}
+.brigadeItem-member-container{
+    padding:0 3rem 2rem;
+    color: rgb(59, 58, 58);
+    list-style: none;
+}
+
+.brigadeItem-member-container li{
+    margin-bottom: 1rem;
+    background-color: rgb(244 244 244);
+    padding: 1rem 3rem;
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.2);
+}
+
+.brigadeItem_member-name{
+    color: rgb(53, 53, 53);
+    font-size: 1.2rem;
+}
