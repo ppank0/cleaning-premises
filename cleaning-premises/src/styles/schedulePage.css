@@ -1,0 +1,19 @@
+.schedule_page-container{
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+}
+.schedule_page-container table{
+    border-collapse: collapse;
+}
+.schedule_page-thed{
+    background-color: rgba(205,223,214,1);
+    color: var(--header-text-color);
+    
+}
+.schedule_page-thed tr th{
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    border: 2px solid #b2a9a9;
+}
+
