@@ -4,7 +4,6 @@ import MyPopup from './CustomPopup'
 
 
 const BrigadeItem = ({brigade}) => {
-  const [selectedMember, setSelectedMember] = useState(null);
   const [isShow, setIsShow] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [editedMember, setEditedMember] = useState(null);
@@ -26,7 +25,6 @@ const BrigadeItem = ({brigade}) => {
     console.log('Сохранены изменения:', editedMember);
 
     setEditedMember(null);
-    setSelectedMember(editedMember);
     brigade.members.map(member=>{
       if(member.id === other.id){
         if(editedMember.name!==''&&editedMember.contact!==''&&editedMember.experience!==''){
@@ -54,29 +52,34 @@ const BrigadeItem = ({brigade}) => {
       randomId = getRandomInt(103, 999);
       isUniq = !brigade.schedule.some(one => one.id === randomId);
     } while (!isUniq);
-    if(isUniq){
-      
-        const newElement = {
-          id: randomId,
-          date: editedMember.date,
-          time: editedMember.time,
-          room : editedMember.room
-        };
-        brigade.schedule.push(newElement);
-        console.log("Данные: "+newElement.date+' ' + newElement.time+ ' ' + newElement.room);
+
+    try {
+      if(isUniq){
+        if(!(editedMember?.date===" "&&editedMember?.time===" "&&editedMember?.room===" ")){
+          const newElement = {
+            id: randomId,
+            date: editedMember.date,
+            time: editedMember.time,
+            room : editedMember.room
+          };
+          brigade.schedule.push(newElement);
+          console.log("Данные: "+newElement.date+' ' + newElement.time+ ' ' + newElement.room);
+          setIsAdding(false);
+        }
+      }
+      else if(isUniq===false){
+        handleSaveAddingChange();
+      }
+      else{
         setIsAdding(false);
-      
-      
+        setEditedMember(null);
+      }
+    } catch (error) {
+        setIsAdding(false);
+        setEditedMember(null);
     }
-    else if(isUniq===false){
-      handleSaveAddingChange();
-    }
-    else{
-      setIsAdding(false);
-      setEditedMember(null);
-    }
-    
   }
+
   function handleCancelChanges() {
     setIsShow(true);
     setEditedMember(null);
@@ -140,7 +143,6 @@ const BrigadeItem = ({brigade}) => {
                                 </div>}
                               </div>}
                             />
-
                         </li>
                     ))}
                 </ul>
