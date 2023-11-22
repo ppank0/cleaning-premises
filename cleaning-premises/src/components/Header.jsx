@@ -4,6 +4,7 @@ import './../styles/header.css';
 import Home from './../pages/Home'
 import Brigades from '../pages/Brigades';
 import SchedulePage from '../pages/SchedulePage';
+import RoomPage from './../pages/RoomPage'
 
 const Header = () => {
     return ( 
@@ -27,7 +28,7 @@ const Header = () => {
                     <Route path="/" element={<Home />} />
                     <Route exect path='/brigades' element={<Brigades/>}/>
                     <Route exect path='/schedule' element={<SchedulePage/>}/>
-                    {/* <Route exect path='/rooms' element={}/>  */}
+                    <Route exect path='/rooms' element={<RoomPage/>}/> 
                 </Routes>
             </Router>
         </>
