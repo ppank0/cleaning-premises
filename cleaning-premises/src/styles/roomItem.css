@@ -1,0 +1,14 @@
+.roomItem-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background-color: rgba(205,223,214,1);
+    border-radius: 8px;
+    width: 70%;
+}
+.roomItem_container-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--header-text-color);
+}
