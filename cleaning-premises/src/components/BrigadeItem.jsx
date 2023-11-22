@@ -28,9 +28,12 @@ const BrigadeItem = ({brigade}) => {
     setSelectedMember(editedMember);
     brigade.members.map(member=>{
       if(member.id === other.id){
-        member.name = editedMember.name;
-        member.contact = editedMember.contact;
-        member.experience = editedMember.experience;
+        if(editedMember.name!==''&&editedMember.contact!==''&&editedMember.experience!==''){
+          member.name = editedMember.name;
+          member.contact = editedMember.contact;
+          member.experience = editedMember.experience;
+        }
+        
       }
     })
     setIsShow(true);
@@ -41,6 +44,7 @@ const BrigadeItem = ({brigade}) => {
     setIsShow(true);
     setEditedMember(null);
   }
+
     return ( 
         <div className="brigade-container">
             <div className="brigadeItem-title">
@@ -111,7 +115,9 @@ const BrigadeItem = ({brigade}) => {
                               <p className="brigadeItem_shedule room">Помещение: {item.room}</p>
                               <hr />
                           </li>
+                          
                       ))}
+                      <button className="popup-btn" style={{marginLeft:'25%'}}>Добавить</button>
                 </div>
               </div>     
             </div>     
