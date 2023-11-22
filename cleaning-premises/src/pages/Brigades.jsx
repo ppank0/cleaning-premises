@@ -19,14 +19,16 @@ const Brigades = () => {
 
   
     return ( 
+      <>
         <div className="brigades_page-container">
             {brigades.map(brigade => (
               <BrigadeItem key={brigade.id} brigade={brigade} />
             ))}
+            
         </div>
+        <Footer/>
+      </>
 
-        
-      
      );
 }
  
