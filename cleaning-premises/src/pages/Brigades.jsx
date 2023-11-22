@@ -6,7 +6,7 @@ import './../styles/brigades.css'
 
 
 const Brigades = () => {
-    const [brigades, setBrigades] = useState([]);
+  const [brigades, setBrigades] = useState([]);
     
   useEffect(() => {
     setBrigades(data)

@@ -105,7 +105,7 @@ const BrigadeItem = ({brigade}) => {
                           </div>
                           
                             <MyPopup
-                              buttonText = "Подробнее"
+                              item = {<button className='popup-btn'>Подробнее</button>}
                               popupContent = {<div style={{display: 'flex',
                                         gap: '2rem', padding:'2rem 3rem'}}>
                               <img src={member.img} alt="img"  style={{width:'50%'}}/>
