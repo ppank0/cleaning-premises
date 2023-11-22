@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './../styles/header.css';
 import Home from './../pages/Home'
 import Brigades from '../pages/Brigades';
+import SchedulePage from '../pages/SchedulePage';
 
 const Header = () => {
     return ( 
@@ -25,8 +26,8 @@ const Header = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route exect path='/brigades' element={<Brigades/>}/>
-                    {/* <Route exect path='/schedule' element={}/>
-                    <Route exect path='/rooms' element={}/> */}
+                    <Route exect path='/schedule' element={<SchedulePage/>}/>
+                    {/* <Route exect path='/rooms' element={}/>  */}
                 </Routes>
             </Router>
         </>
