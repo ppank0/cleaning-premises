@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "Конференц-зал А",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-20"
+    },
+    {
+      "id": 2,
+      "name": "Офис 101",
+      "cleane": "Не убрано",
+      "lastCleanedDate": "2023-11-18"
+    },
+    {
+      "id": 3,
+      "name": "Лобби",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-21"
+    },
+    {
+      "id": 4,
+      "name": "Кабинет 205",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-20"
+    },
+    {
+      "id": 5,
+      "name": "Переговорная 1",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-19"
+    },
+    {
+      "id": 6,
+      "name": "Офис 303",
+      "cleaned": "Не убрано",
+      "lastCleanedDate": "2023-11-17"
+    },
+    {
+      "id": 7,
+      "name": "Кабинет 207",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-21"
+    },
+    {
+      "id": 8,
+      "name": "Коридор 1",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-20"
+    },
+    {
+      "id": 9,
+      "name": "Офис 202",
+      "cleaned": "Убрано",
+      "lastCleanedDate": "2023-11-19"
+    },
+    {
+      "id": 10,
+      "name": "Кабинет 401",
+      "cleaned": "Не убрано",
+      "lastCleanedDate": "2023-11-16"
+    }
+  ]
