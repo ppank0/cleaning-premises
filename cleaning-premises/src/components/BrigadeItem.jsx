@@ -6,6 +6,7 @@ import MyPopup from './CustomPopup'
 const BrigadeItem = ({brigade}) => {
   const [selectedMember, setSelectedMember] = useState(null);
   const [isShow, setIsShow] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
   const [editedMember, setEditedMember] = useState(null);
 
   function handleMemberChange(member) {
@@ -39,12 +40,52 @@ const BrigadeItem = ({brigade}) => {
     setIsShow(true);
     
   }
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+ 
+  function handleSaveAddingChange() {
+    let isUniq = false;
+    let randomId;
 
+    do {
+      randomId = getRandomInt(103, 999);
+      isUniq = !brigade.schedule.some(one => one.id === randomId);
+    } while (!isUniq);
+    if(isUniq){
+      
+        const newElement = {
+          id: randomId,
+          date: editedMember.date,
+          time: editedMember.time,
+          room : editedMember.room
+        };
+        brigade.schedule.push(newElement);
+        console.log("Данные: "+newElement.date+' ' + newElement.time+ ' ' + newElement.room);
+        setIsAdding(false);
+      
+      
+    }
+    else if(isUniq===false){
+      handleSaveAddingChange();
+    }
+    else{
+      setIsAdding(false);
+      setEditedMember(null);
+    }
+    
+  }
   function handleCancelChanges() {
     setIsShow(true);
     setEditedMember(null);
+    setIsAdding(false);
   }
 
+  function handleAddShedule() {
+    setIsAdding(true);
+  }
     return ( 
         <div className="brigade-container">
             <div className="brigadeItem-title">
@@ -93,8 +134,8 @@ const BrigadeItem = ({brigade}) => {
                                     onChange={handleInputChange}
                                   />
                                     <div style={{display:'flex', gap:'1rem', marginTop:'1rem'}}>
-                                      <button onClick={() => handleSaveChanges(member)}>Сохранить</button>
-                                      <button onClick={handleCancelChanges}>Отмена</button>
+                                      <button className="popup-btn" onClick={() => handleSaveChanges(member)}>Сохранить</button>
+                                      <button className="popup-btn" onClick={handleCancelChanges}>Отмена</button>
                                     </div>
                                 </div>}
                               </div>}
@@ -117,7 +158,28 @@ const BrigadeItem = ({brigade}) => {
                           </li>
                           
                       ))}
-                      <button className="popup-btn" style={{marginLeft:'25%'}}>Добавить</button>
+                      {!isAdding?
+                          <button onClick={handleAddShedule} className="popup-btn" style={{marginLeft:'25%'}}>Добавить</button>
+                          :
+                          <div style={{display:'flex', flexDirection:'column'}}>
+                            <input type="text" placeholder="Дата(гггг-мм-дд)"
+                                    name="date"
+                                    value={editedMember?.date || ''}
+                                    onChange={handleInputChange}/>
+                            <input type="text" placeholder="Время(чч:мм)"
+                              name="time"
+                              value={editedMember?.time || ''}
+                              onChange={handleInputChange}/>
+                            <input type="text" placeholder="Помещение"
+                              name="room"
+                              value={editedMember?.room || ''}
+                              onChange={handleInputChange}/>
+                            <div style={{display:'flex', gap:'1rem', justifyContent:'center', marginTop:'1rem'}}>
+                              <button className="popup-btn" onClick={handleSaveAddingChange}>Добавить</button>
+                              <button onClick={handleCancelChanges} className="popup-btn">Отмена</button>
+                            </div>
+                          </div>
+                      }
                 </div>
               </div>     
             </div>     
