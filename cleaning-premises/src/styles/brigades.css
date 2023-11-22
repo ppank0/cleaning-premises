@@ -2,3 +2,10 @@
     margin-top: 2rem;
     padding: 0 10rem;
 }
+
+
+@media screen and (max-width:930px){
+    .brigades_page-container{
+        padding: 0 2rem;
+    }
+}

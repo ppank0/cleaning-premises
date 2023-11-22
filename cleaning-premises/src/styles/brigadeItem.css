@@ -14,7 +14,17 @@
     list-style: none;
 }
 
+.brigade-body-container{
+    display: flex;
+    justify-content: space-between;
+}
+.brigade-member{
+    width: 70%;
+}
 .brigadeItem-member-container li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
     background-color: rgb(244 244 244);
     padding: 1rem 3rem;
@@ -24,4 +34,36 @@
 .brigadeItem_member-name{
     color: rgb(53, 53, 53);
     font-size: 1.2rem;
+}
+
+.brigadeItem-schedule{
+    list-style: none;
+}
+.brigadeItem_schedule-title{
+    color: var(--header-text-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.brigade_schedule-textbox{
+    padding: 1rem 1rem;
+    background-color: rgb(244 244 244);
+    box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+.brigadeItem-schedule li{
+    margin-right: 2rem;
+}
+
+.brigadeItem-schedule li hr{
+    margin: 1rem 0;
+}
+
+@media screen and (max-width:1100px){
+    .brigade-body-container{
+        display: block;
+    }
+    .brigade-member{
+        width: 100%;
+    }
 }
