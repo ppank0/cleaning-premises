@@ -1,0 +1,8 @@
+.question-container{
+    margin: 2rem 10rem;
+}
+.accordion.accordion-flush{
+    padding: 1rem 3rem;
+    background-color:  rgba(179, 206, 193, 0.659);
+    border-radius: 2rem;
+}
