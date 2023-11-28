@@ -7,6 +7,7 @@ const BrigadeItem = ({brigade}) => {
   const [isShow, setIsShow] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [editedMember, setEditedMember] = useState(null);
+  const [isAddSuccess, setIsAddSuccess] = useState(false);
 
   function handleMemberChange(member) {
     setIsShow(false);
@@ -65,6 +66,7 @@ const BrigadeItem = ({brigade}) => {
           brigade.schedule.push(newElement);
           console.log("Данные: "+newElement.date+' ' + newElement.time+ ' ' + newElement.room);
           setIsAdding(false);
+          setIsAddSuccess(true);
         }
       }
       else if(isUniq===false){
@@ -90,7 +92,13 @@ const BrigadeItem = ({brigade}) => {
     setIsAdding(true);
   }
     return ( 
-        <div className="brigade-container">
+      <div className="brigade-container">
+          {isAddSuccess && (
+            <div className="alert alert-success text-bg-success" role="alert">
+              Добавление выполнено успешно!
+              <button style={{padding:'.7rem'}} onClick={() => setIsAddSuccess(false)} type="button" className="btn-close" aria-label="Close"></button>
+            </div>
+          )}
             <div className="brigadeItem-title">
                 <h2 className="brigade-name">{brigade.name}</h2>
             </div>
@@ -110,7 +118,7 @@ const BrigadeItem = ({brigade}) => {
                                         gap: '2rem', padding:'2rem 3rem'}}>
                               <img src={member.img} alt="img"  style={{width:'50%'}}/>
                                  {isShow ? <div style={{fontSize:'1.2rem'}}>
-                                  <p style={{fontSize:'2rem', margin:'1.5rem 0'}}>{member.name}</p>
+                                  <p style={{fontSize:'2rem', margin:'1rem 0'}}>{member.name}</p>
                                   <p style={{marginBottom:'.5rem'}}>Контакты: {member.contact}</p>
                                   <p style={{marginBottom:'.7rem'}}>Стаж работы: {member.experience}</p>
                                   <button className="popup-btn" onDoubleClick={() => handleMemberChange(member)}>Изменить</button>
@@ -158,7 +166,6 @@ const BrigadeItem = ({brigade}) => {
                               <p className="brigadeItem_shedule room">Помещение: {item.room}</p>
                               <hr />
                           </li>
-                          
                       ))}
                       {!isAdding?
                           <button onClick={handleAddShedule} className="popup-btn" style={{marginLeft:'25%'}}>Добавить</button>
