@@ -8,3 +8,12 @@
     background-color: rgba(205,223,214,1);
     cursor: pointer;
 }
+
+.popup-container{
+    position: relative;
+}
+.btn-close{
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
