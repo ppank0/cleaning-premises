@@ -11,18 +11,43 @@ const Header = () => {
         <>
         
             <Router>
-            <div className="header-container">
-                <h1 className="header-title">Cleaning Premises</h1>
-                {/* <div > */}
+            {/* <div className="">
+                <h1 className="header-title"></h1>
                 <label htmlFor="navbar-toggle" className="burger-icon">&#9776;</label>
                     <ul className="nav-list">
-                    <li><Link to="/">Главная</Link></li>
-                    <li><Link to="/brigades">Бригады</Link></li>
-                    <li><Link to="/schedule">График работ</Link></li>
-                    <li><Link to="/rooms">Помещения</Link></li>
+                    <li><Link to="/"></Link></li>
+                    <li><Link to=""></Link></li>
+                    <li><Link to=""></Link></li>
+                    <li><Link to=""></Link></li>
                     </ul>
-                {/* </div> */}
-            </div>
+            </div> */}
+
+
+            <nav class="navbar navbar-expand-lg  header-container">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Cleaning Premises</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a class="nav-link " active aria-current="page" href="/">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/brigades">Бригады</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/schedule">График работ</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href='/rooms'>Помещения</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
                 <Routes>
                     <Route path="/" element={<Home />} />
