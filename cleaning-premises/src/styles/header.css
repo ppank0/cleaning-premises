@@ -30,7 +30,7 @@ a.nav-link:hover{
     text-decoration:underline;
 }
 
-@media screen and (max-width:1120px){
+@media screen and (max-width:1314px){
     .navbar-brand{
         font-size: 1.5rem;
     }
@@ -38,13 +38,11 @@ a.nav-link:hover{
         font-size: 1rem;
     }
 }
-@media screen and (max-width:795px){
-    .burger-icon{
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
+@media screen and (max-width:1135px){
+    .navbar-brand{
+        font-size: 1.2rem;
     }
-    .nav-list{
-        display: none;
+    a.nav-link{
+        font-size: .75rem;
     }
 }

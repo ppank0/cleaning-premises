@@ -5,6 +5,7 @@ import Home from './../pages/Home'
 import Brigades from '../pages/Brigades';
 import SchedulePage from '../pages/SchedulePage';
 import RoomPage from './../pages/RoomPage'
+import QuestionsPage from '../pages/QuestionsPage';
 
 const Header = () => {
     return ( 
@@ -44,6 +45,9 @@ const Header = () => {
                             <li className="nav-item">
                             <a className="nav-link" href='/rooms'>Помещения</a>
                             </li>
+                            <li className="nav-item">
+                            <a className="nav-link" href='/questions'>Вопрос-Ответ</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -54,6 +58,7 @@ const Header = () => {
                     <Route exect path='/brigades' element={<Brigades/>}/>
                     <Route exect path='/schedule' element={<SchedulePage/>}/>
                     <Route exect path='/rooms' element={<RoomPage/>}/> 
+                    <Route exect path='/questions' element={<QuestionsPage/>}/> 
                 </Routes>
             </Router>
         </>
