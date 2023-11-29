@@ -8,6 +8,7 @@ const BrigadeItem = ({brigade}) => {
   const [isAdding, setIsAdding] = useState(false);
   const [editedMember, setEditedMember] = useState(null);
   const [isAddSuccess, setIsAddSuccess] = useState(false);
+  const [isShowAlert, setIsShowAlert] = useState(false);
 
   function handleMemberChange(member) {
     setIsShow(false);
@@ -23,8 +24,6 @@ const BrigadeItem = ({brigade}) => {
   }
 
   function handleSaveChanges(other) {
-    console.log('Сохранены изменения:', editedMember);
-
     setEditedMember(null);
     brigade.members.map(member=>{
       if(member.id === other.id){
@@ -39,6 +38,7 @@ const BrigadeItem = ({brigade}) => {
     setIsShow(true);
     
   }
+
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -56,7 +56,8 @@ const BrigadeItem = ({brigade}) => {
 
     try {
       if(isUniq){
-        if(!(editedMember?.date===" "&&editedMember?.time===" "&&editedMember?.room===" ")){
+        setIsShowAlert(true);
+        if(editedMember?.date!==undefined&&editedMember?.time!==undefined&&editedMember?.room!==undefined){
           const newElement = {
             id: randomId,
             date: editedMember.date,
@@ -64,17 +65,12 @@ const BrigadeItem = ({brigade}) => {
             room : editedMember.room
           };
           brigade.schedule.push(newElement);
-          console.log("Данные: "+newElement.date+' ' + newElement.time+ ' ' + newElement.room);
           setIsAdding(false);
           setIsAddSuccess(true);
         }
-      }
-      else if(isUniq===false){
-        handleSaveAddingChange();
-      }
-      else{
-        setIsAdding(false);
-        setEditedMember(null);
+        else{
+          setIsAddSuccess(false);
+        }
       }
     } catch (error) {
         setIsAdding(false);
@@ -93,12 +89,17 @@ const BrigadeItem = ({brigade}) => {
   }
     return ( 
       <div className="brigade-container">
-          {isAddSuccess && (
+          {isShowAlert && (isAddSuccess ? (
             <div className="alert alert-success text-bg-success" role="alert">
               Добавление выполнено успешно!
-              <button style={{padding:'.7rem'}} onClick={() => setIsAddSuccess(false)} type="button" className="btn-close" aria-label="Close"></button>
+              <button style={{padding:'.7rem'}} onClick={() => setIsShowAlert(false)} type="button" className="btn-close" aria-label="Close"></button>
             </div>
-          )}
+          ): (<div className="alert alert-success text-bg-danger" role="alert">
+          Не все поля заполнены!
+          <button style={{padding:'.7rem'}} onClick={() => setIsShowAlert(false)} type="button" className="btn-close" aria-label="Close"></button>
+        </div>))}
+
+
             <div className="brigadeItem-title">
                 <h2 className="brigade-name">{brigade.name}</h2>
             </div>
@@ -111,7 +112,6 @@ const BrigadeItem = ({brigade}) => {
                             <h3 className="brigadeItem_member-name">{member.name}</h3>
                             <p>Стаж работы: {member.experience}</p>
                           </div>
-                          
                             <MyPopup
                               item = {<button className='popup-btn'>Подробнее</button>}
                               popupContent = {<div style={{display: 'flex',
