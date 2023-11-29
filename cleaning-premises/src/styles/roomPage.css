@@ -1,7 +1,18 @@
 .roomPage-container{
     margin: 3rem 10rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
     align-items: center;
-    gap: .4rem;
+}
+
+@media screen and (max-width:1070px){
+    .roomPage-container{
+        margin: 3rem 4rem;
+    }
+}
+@media screen and (max-width:810px){
+    .roomPage-container{
+        margin: 3rem 2rem;
+    }
 }
