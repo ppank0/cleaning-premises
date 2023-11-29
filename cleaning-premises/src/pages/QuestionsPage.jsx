@@ -65,7 +65,7 @@ const QuestionsPage = () => {
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    Какие типы помещений вы убираете?
+                    Как заказать уборку?
                     </button>
                     </h2>
                     <div id="flush-collapseSix" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
