@@ -15,3 +15,8 @@
 .schedule_item-tr-hidden{
     display: none;
 }
+
+[type=button-d]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), .button-d:not(:disabled) {
+    cursor: pointer;
+    border: none;
+}
