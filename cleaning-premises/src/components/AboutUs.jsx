@@ -20,7 +20,38 @@ const AboutUs = () => {
                  отели и другие коммерческие объекты. Наш подход основан на индивидуальной оценке потребностей каждого клиента
                   и разработке оптимального плана уборки.
                 </p>
-                <img src="https://fis.ru/popup_imgs/55629026.png" alt="" />
+
+                
+                
+                <div id="carouselExampleInterval" className="carousel slide w-100" data-bs-ride="carousel" >
+                  <div className="carousel-inner">
+                    <div className="carousel-item active" data-bs-interval="10000">
+                      <div className="aboutUs-scroll_text first">
+                        Чистота начинается с нас!
+                      </div>
+                    </div>
+                    <div className="carousel-item" data-bs-interval="2000">
+                      <div className="aboutUs-scroll_text second">
+                        Превратим хаос в гармонию.
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <div className="aboutUs-scroll_text third">
+                        Чистота - ключ к успеху.
+                      </div>
+                    </div>
+                  </div>
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                  </button>
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
+              </div>
+
+
                 <p>
                 Наша команда состоит из опытных специалистов, которые обладают глубоким знанием в области уборки и соблюдают
                  высокие стандарты профессионализма. Мы используем современные технологии и инструменты, чтобы обеспечить

@@ -1,5 +1,8 @@
 #about-us{
     padding: 2rem 5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 #about-us h2{
     font-size: 2rem;
@@ -10,10 +13,41 @@
     color: rgb(78, 77, 77);
     margin-bottom: 1rem;
 }
-#about-us img{
-    width: 50%;
+.carousel.slide{
+    padding: 1rem 0;
+}
+.carousel-item img{
+    width: 100%;
+
+}
+.carousel-inner{
+    background-color: #ffffff;
+}
+#carouselExampleInterval{
+    background-color: #8f8f8f;
+    margin: 2rem 0;
+}
+.aboutUs-scroll_text{
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 900;
+    padding: 1rem 0;
+    text-align: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: url(https://images.pexels.com/photos/3705846/pexels-photo-3705846.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    animation: anim 10s infinite linear;
 }
 
+@keyframes anim{
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 100% 100%;
+    }
+
+}
 @media screen and (max-width:810px){
     #about-us img{
         width: 70%;
