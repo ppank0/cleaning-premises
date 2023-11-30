@@ -14,6 +14,7 @@
 .schedule_page-thed tr th{
     padding: 1rem 1.5rem;
     font-size: 1.3rem;
+    text-align: center;
     border: 2px solid #b2a9a9;
 }
 
