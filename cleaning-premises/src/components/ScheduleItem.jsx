@@ -73,7 +73,7 @@ const ScheduleItem = ({schedule}) => {
                 <td>{schedule.time}</td>
                 <td>
                     <div class="dropdown">
-                        <button className='dropdown-btn' class="btn dropdown-toggle" type="button-d" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button className='btn dropdown-toggle' class="btn dropdown-toggle" type="button-d" data-bs-toggle="dropdown" aria-expanded="false">
                             {schedule_item.CleanStatus}
                         </button>
                         <ul class="dropdown-menu">

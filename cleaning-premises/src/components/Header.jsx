@@ -40,7 +40,7 @@ const Header = () => {
                             <a className="nav-link" href="/brigades">Бригады</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" href="/schedule">График работ</a>
+                            <a className="nav-link" href="/schedules">График работ</a>
                             </li>
                             <li className="nav-item">
                             <a className="nav-link" href='/rooms'>Помещения</a>
@@ -56,7 +56,7 @@ const Header = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route exect path='/brigades' element={<Brigades/>}/>
-                    <Route exect path='/schedule' element={<SchedulePage/>}/>
+                    <Route exect path='/schedules' element={<SchedulePage/>}/>
                     <Route exect path='/rooms' element={<RoomPage/>}/> 
                     <Route exect path='/questions' element={<QuestionsPage/>}/> 
                 </Routes>
