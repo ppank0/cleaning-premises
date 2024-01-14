@@ -11,13 +11,13 @@ import {
 
 const BrigadeItem = ({brigade}) => {
   const [isShow, setIsShow] = useState(true);
-  //const [isAdding, setIsAdding] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
   const [editedMember, setEditedMember] = useState(null);
   const [isAddSuccess, setIsAddSuccess] = useState(false);
   const [isShowAlert, setIsShowAlert] = useState(false);
   
-  const brigadeD = useSelector((state) => state.brigade);
-  const dispatch = useDispatch();
+  //const brigadeD = useSelector((state) => state.brigade);
+  //const dispatch = useDispatch();
 
   function handleMemberChange(member) {
     setIsShow(false);
@@ -80,8 +80,8 @@ const BrigadeItem = ({brigade}) => {
             room : editedMember.room
           };
           brigade.schedule.push(newElement);
-          //setIsAdding(false);
-          dispatch(setAdding(false));
+          setIsAdding(false);
+          //dispatch(setAdding(false));
           setIsAddSuccess(true);
         }
         else{
@@ -89,8 +89,8 @@ const BrigadeItem = ({brigade}) => {
         }
       }
     } catch (error) {
-        //setIsAdding(false);
-        dispatch(setAdding(false));
+        setIsAdding(false);
+        //dispatch(setAdding(false));
         setEditedMember(null);
     }
   }
@@ -99,13 +99,13 @@ const BrigadeItem = ({brigade}) => {
     setIsShow(true);
     setEditedMember(null);
     
-    //setIsAdding(false);
-    dispatch(setAdding(false));
+    setIsAdding(false);
+    //dispatch(setAdding(false));
   }
 
   function handleAddShedule() {
-    //setIsAdding(true);
-    dispatch(setAdding(true));
+    setIsAdding(true);
+    //dispatch(setAdding(true));
   }
     return ( 
       <div className="brigade-container">
@@ -187,7 +187,7 @@ const BrigadeItem = ({brigade}) => {
                               <hr />
                           </li>
                       ))}
-                      {!brigadeD.isAdding?
+                      {!isAdding?
                           <button onClick={handleAddShedule} className="popup-btn" style={{marginLeft:'25%'}}>Добавить</button>
                           :
                           <div style={{display:'flex', flexDirection:'column'}}>

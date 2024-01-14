@@ -1,28 +1,24 @@
 import React from 'react';
+import { Context } from "../index";
+import { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './../styles/header.css';
-import Home from './../pages/Home'
-import Brigades from '../pages/Brigades';
-import SchedulePage from '../pages/SchedulePage';
-import RoomPage from './../pages/RoomPage'
-import QuestionsPage from '../pages/QuestionsPage';
+import { useNavigate } from "react-router";
+import {observer} from 'mobx-react-lite'
+import { REGISTRATION_ROUTE, HOME_ROUTE } from '../utils/consts';
 
-const Header = () => {
+
+const Header = observer(() => {
+    const navigate = useNavigate()
+    const {user} = useContext(Context)
+
+    const logOut = ()=>{
+        localStorage.clear()
+        navigate(HOME_ROUTE)
+   }
     return ( 
         <>
         
-            <Router>
-            {/* <div className="">
-                <h1 className="header-title"></h1>
-                <label htmlFor="navbar-toggle" className="burger-icon">&#9776;</label>
-                    <ul className="nav-list">
-                    <li><Link to="/"></Link></li>
-                    <li><Link to=""></Link></li>
-                    <li><Link to=""></Link></li>
-                    <li><Link to=""></Link></li>
-                    </ul>
-            </div> */}
-
 
             <nav className="navbar navbar-expand-lg  header-container">
                 <div className="container-fluid">
@@ -48,22 +44,25 @@ const Header = () => {
                             <li className="nav-item">
                             <a className="nav-link" href='/questions'>Вопрос-Ответ</a>
                             </li>
+                            {localStorage.isAuth?
+                            <li className="nav-item">
+                            <a className="nav-link" href='/profile'>Профиль</a>
+                            </li> : <></>
+                            }
+                            {localStorage.isAuth ?
+                                <button type="button" class="btn btn-outline-secondary" onClick={()=>logOut()}>Log Out</button>
+                                 :
+                                <button type="button" class="btn btn-outline-secondary" onClick={()=> navigate(REGISTRATION_ROUTE)}>Sign Up</button>
+                            }
                         </ul>
                     </div>
                 </div>
             </nav>
 
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route exect path='/brigades' element={<Brigades/>}/>
-                    <Route exect path='/schedule' element={<SchedulePage/>}/>
-                    <Route exect path='/rooms' element={<RoomPage/>}/> 
-                    <Route exect path='/questions' element={<QuestionsPage/>}/> 
-                </Routes>
-            </Router>
+             
         </>
         
      );
-}
+})
  
 export default Header;
